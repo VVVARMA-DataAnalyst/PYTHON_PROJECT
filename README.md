@@ -27,10 +27,15 @@ The chatbot also supports text commands for accessibility and has a simple, user
 
  ## CODE EXPALINATION
  **Importing Required Libraries**
+ 
  import streamlit as st
+ 
  import speech_recognition as sr
+ 
  import pyttsx3
+ 
  import wikipedia
+ 
  import datetime, webbrowser, os, re
 
 **Explaination:**
@@ -46,13 +51,21 @@ wikipedia: Fetches brief summaries from Wikipedia.
 datetime, webbrowser, os, re: Support modules for utilities, file access, and regex cleanup.
 
 **Safe Text-to-Speech Function**
+
 def speak(text: str):
+
     engine = pyttsx3.init()
+    
     engine.setProperty("rate", 180)
+    
     voices = engine.getProperty("voices")
+    
     engine.setProperty("voice", voices[0].id)
+    
     engine.say(text)
+    
     engine.runAndWait()
+    
     engine.stop()
 
 **Explaination:**
